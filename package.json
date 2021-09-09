@@ -1,0 +1,39 @@
+{
+  "name": "askpoise",
+  "version": "1.0.0",
+  "description": "A MERN stack robust web application that combines search and sort algorithms to make the best possible result suggestions about any relatable question asked by a user, via text, images or both",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalole/askPoise.git"
+  },
+  "keywords": [
+    "search",
+    "sort",
+    "algorithm",
+    "MERN",
+    "stack"
+  ],
+  "author": "Mikail Rasheed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aalole/askPoise/issues"
+  },
+  "homepage": "https://github.com/aalole/askPoise#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
