@@ -4,6 +4,7 @@ import connectDb from './utils/config/db.js'
 import morgan from "morgan";
 
 import userRoutes from './routes/userRoutes.js'
+import articleRoutes from './routes/articleRoutes.js'
 
 const app = express()
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/posts', articleRoutes)
 
 app.listen(port, () => {
     console.log(`app listening on port ${port} in ${process.env.NODE_ENV} mode`);
