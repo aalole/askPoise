@@ -36,7 +36,32 @@ const createUser = async (req, res) => {
     } catch (error) {
         console.log('Error', error)
     }
-
 }
 
-export { createUser }
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const user = await User.findOne({ email })
+        const passwordMatch = await user.comparePassword(password)
+        if (user && passwordMatch) {
+            res.status(200).json({
+                data: {
+                    message: 'Login successful',
+                    _id: user._id,
+                    firstname: user.firstname,
+                    lastname: user.lastname,
+                    email: user.email,
+                    image: user.image,
+                    phone: user.phone,
+                    isAdmin: user.isAdmin,
+                    token: createToken(user._id)
+                }
+            })
+        }
+
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+export { createUser, login }
