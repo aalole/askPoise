@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/userModel.js'
-import { promisify } from 'util'
 
 const verifyToken = async (req, res, next) => {
     let token;
