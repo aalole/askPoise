@@ -53,7 +53,9 @@ const userSchema = new mongoose.Schema({
             message: 'Passwords does not match'
         }
     }
-})
+},
+{timestamps: true}
+)
 
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next()

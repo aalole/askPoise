@@ -12,10 +12,9 @@ const articleSchema = new mongoose.Schema({
         required: true,
         minlength: [5, 'At least five characters required']
     },
-    category: {
-        type: String,
+    categories: {
+        type: [String],
         required: true,
-        enum: ['effective communication', 'Team Work', 'Branding', 'Creativity', 'Emotional Intelligence', 'Diplomacy'],
         default: 'effective communication',
         lowercase: true
     },
