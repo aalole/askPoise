@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import reviewSchema from './reviewModel.js';
 
 const articleSchema = new mongoose.Schema({
     visualType: {
@@ -32,8 +33,19 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true,
         maxlength: [2000, 'This article cannot be longer than 2000 words only']
-    }
-});
+    },
+    rating: {
+        type: Number,
+        require: true,
+        default: 0,
+    },
+    numReviews: {
+        type: Number,
+        require: true,
+        default: 0,
+    },
+    reviews: [reviewSchema]
+}, { timestamps: true });
 
 const Article = mongoose.model('Article', articleSchema);
 
