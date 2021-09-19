@@ -4,6 +4,6 @@ import { verifyToken, isAdmin } from "../utils/middleware.js";
 
 const router = express.Router()
 
-router.route('/').post(verifyToken, isAdmin, createCategory).get(verifyToken, isAdmin, getAllCategories)
+router.route('/').post(verifyToken, isAdmin, createCategory).get(getAllCategories)
 
 export default router
