@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 // app.use(fileUpload({ useTempFiles: true }))
-const baseUrl =  'http://localhost:3000' || "https://deploy-preview-2--askpoise-preview.netlify.app" 
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : "https://deploy-preview-2--askpoise-preview.netlify.app"
 
 const corsOptions = {
     origin: baseUrl,
