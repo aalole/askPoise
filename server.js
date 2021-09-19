@@ -22,13 +22,13 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 // app.use(fileUpload({ useTempFiles: true }))
-const baseUrl =  'http://localhost:3000' || "https://deploy-preview-2--askpoise-preview.netlify.app" 
+// const baseUrl =  'http://localhost:3000' || "https://deploy-preview-2--askpoise-preview.netlify.app" 
 
 const corsOptions = {
-    origin: baseUrl,
+    origin: "*",
     optionsSuccessStatus: 200
 }
-app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/users', cors(corsOptions), userRoutes)
 app.use('/api/v1/posts', cors(corsOptions), articleRoutes)
 app.use('/api/v1/category', cors(corsOptions), categoryRoutes)
 
