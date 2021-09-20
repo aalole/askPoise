@@ -38,9 +38,10 @@ const createPost = async (req, res) => {
 
 // get all post 
 const getPosts = async (req, res) => {
+
     try {
         const keyword = req.query.keyword ? {
-            name: {
+            tags: {
                 $regex: req.query.keyword,
                 $options: 'i'
             }
