@@ -16,8 +16,7 @@ const articleSchema = new mongoose.Schema({
     categories: {
         type: [String],
         required: true,
-        default: 'effective communication',
-        lowercase: true
+        default: ['Economy', 'Finance'],
     },
     author: {
         type: mongoose.Schema.ObjectId,

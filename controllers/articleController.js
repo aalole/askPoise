@@ -151,7 +151,7 @@ const createArticleReview = async (req, res) => {
             })
         } else {
             res.status(404);
-            throw new Error("Product not found");
+            throw new Error("Post not found");
         }
     } catch (error) {
         res.status(500).json({
@@ -167,5 +167,4 @@ const getTopArticles = async (req, res) => {
 
 // list of todos [1. get all tags from all articles as an array]
 // store them in a single array and then check query parameters against each of the tag in all tags array.
-// we'll use this to determine the best matching article for user search
 export { createPost, getPosts, getSinglePost, updatePost, deletePost, createArticleReview, getTopArticles }

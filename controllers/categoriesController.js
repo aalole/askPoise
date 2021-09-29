@@ -19,7 +19,9 @@ const createCategory = async (req, res) => {
         }
 
     } catch (error) {
-        console.log('Error:', error)
+        res.status(400).json({
+            message: error.message
+        })
     }
 }
 
@@ -34,7 +36,9 @@ const getAllCategories = async (req, res) => {
             }
         })
     } catch (error) {
-
+        res.status(400).json({
+            message: error.message
+        })
     }
 }
 export { createCategory, getAllCategories }
